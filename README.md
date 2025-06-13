@@ -14,7 +14,7 @@ A comprehensive job portal application built using the MERN (MongoDB, Express.js
 - **Frontend:** React.js, React Router, Bootstrap
 - **Backend:** Node.js, Express.js, MongoDB
 - **Authentication:** JWT (JSON Web Tokens), Bcrypt (for password hash)
-- **Image Upload:** Cloudinary for storing and managing uploaded images
+- **Image Upload:** Supabase Storage for storing and managing uploaded images
 - **Deployment:** Vercel (frontend), Render(backend), MongoDB Atlas (database)
 
 ## Getting Started
@@ -30,51 +30,60 @@ To get a local copy up and running follow these simple steps.
 ### Installation
 
 1. Clone the repo:
-   ```sh
-   git clone https://github.com/exclusiveabhi/react-job-portal.git
-   ```
+    
+    ```
+    git clone <https://github.com/exclusiveabhi/react-job-portal.git>
+    
+    ```
+    
 2. Install NPM packages:
+    
+    ```
+    cd react-job-portal
+    cd backend
+    npm install
+    cd..
+    cd frontend
+    npm install
+    
+    ```
+    
 
-   ```sh
-   cd react-job-portal
-   cd backend
-   npm install
-   cd..
-   cd frontend
-   npm install
-   ```
+## If you don't want to change the`.env` credentials skip step 4 and move to step 5.
 
-3. ## If you don't want to change the`.env` credentials skip step 4 and move to step 5.
-
-4. Set up environment variables:
-
-   - Create a `config.env` file after creating a `config folder` in the backend directory, containing the following variables:
-
-   ```env
-   PORT=
-   CLOUDINARY_API_KEY=
-   CLOUDINARY_API_SECRET=
-   CLOUDINARY_CLOUD_NAME=
-   FRONTEND_URL=
-   DB_URL=
-   JWT_SECRET_KEY=
-   JWT_EXPIRE=
-   COOKIE_EXPIRE=
-   ```
-
-   Replace each value with your specific configuration details.
-
-5. Run the application backend (make sure you are in `/backend` directory) :
-
-   ```sh
-   node server.js
-   ```
-
-6. Run the application frontend (make sure you are in `/frontend` directory) :
-   ```sh
-   npm run dev
-   ```
-7. Open your browser and navigate to `http://localhost:5173` to view the app.
+1. Set up environment variables:
+    - Create a `config.env` file after creating a `config folder` in the backend directory, containing the following variables:
+    
+    ```
+    PORT=
+    CLOUDINARY_API_KEY=
+    CLOUDINARY_API_SECRET=
+    CLOUDINARY_CLOUD_NAME=
+    FRONTEND_URL=
+    DB_URL=
+    JWT_SECRET_KEY=
+    JWT_EXPIRE=
+    COOKIE_EXPIRE=
+    
+    ```
+    
+    Replace each value with your specific configuration details.
+    
+2. Run the application backend (make sure you are in `/backend` directory) :
+    
+    ```
+    node server.js
+    
+    ```
+    
+3. Run the application frontend (make sure you are in `/frontend` directory) :
+    
+    ```
+    npm run dev
+    
+    ```
+    
+4. Open your browser and navigate to `http://localhost:5173` to view the app.
 
 ## Contributing
 
@@ -90,6 +99,6 @@ Contributions are what make the open-source community such an amazing place to l
 
 ## Contact
 
-Abhishek Rajput - [GitHub](https://github.com/exclusiveabhi)
+Patel Ayush - [GitHub](https://github.com/PatelAyush3265)
 
-Project Link: [https://github.com/exclusiveabhi/react-job-portal.git](https://github.com/exclusiveabhi/react-job-portal.git)
+Project Link: https://github.com/exclusiveabhi/react-job-portal.git
