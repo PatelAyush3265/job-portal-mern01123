@@ -1,0 +1,23 @@
+.profile-navbar-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  margin-left: 15px; /* Adjust spacing as needed */
+  margin-right: 15px; /* Adjust spacing as needed */
+  border: 2px solid transparent;
+}
+
+.profile-navbar-icon:hover {
+  transform: scale(1.1);
+  border: 2px solid #007bff; /* Highlight on hover */
+}
+
+.profile-icon-link {
+  display: flex;
+  align-items: center;
+  height: 100%; /* Ensure it takes full height of navbar item */
+  padding: 0 10px; /* Adjust padding if needed */
+} 
