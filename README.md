@@ -101,4 +101,4 @@ Contributions are what make the open-source community such an amazing place to l
 
 Patel Ayush - [GitHub](https://github.com/PatelAyush3265)
 
-Project Link: https://github.com/exclusiveabhi/react-job-portal.git
+Project Link: https://github.com/PatelAyush3265/job-portal-mern01123.git
