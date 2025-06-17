@@ -1,23 +1,135 @@
+/* Navbar container */
+.navbar {
+  background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 100%); /* Subtle gradient */
+  color: #e6e6e6; /* Slightly lighter gray text */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Navbar links container */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* Increased spacing for elegance */
+}
+
+/* Navbar link styles */
+.navbar-links a {
+  color: #e6e6e6;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Arial', sans-serif;
+  padding: 8px 14px;
+  border-radius: 6px;
+  position: relative; /* For underline effect */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Underline effect on hover */
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00d4ff; /* Vibrant cyan underline */
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* Hover effect for links */
+.navbar-links a:hover {
+  color: #ffffff;
+  transform: translateY(-2px); /* Lift effect */
+}
+
+/* Profile icon styling */
 .profile-navbar-icon {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  margin-left: 15px; /* Adjust spacing as needed */
-  margin-right: 15px; /* Adjust spacing as needed */
-  border: 2px solid transparent;
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 2px solid #555555; /* Darker gray border */
 }
 
+/* Hover effect for profile icon */
 .profile-navbar-icon:hover {
-  transform: scale(1.1);
-  border: 2px solid #007bff; /* Highlight on hover */
+  transform: scale(1.15) rotate(5deg); /* Slight rotation for flair */
+  border-color: #00d4ff; /* Vibrant cyan border */
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.6); /* Enhanced glow */
 }
 
+/* Profile icon link container */
 .profile-icon-link {
   display: flex;
   align-items: center;
-  height: 100%; /* Ensure it takes full height of navbar item */
-  padding: 0 10px; /* Adjust padding if needed */
-} 
+  height: 100%;
+  padding: 0 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for profile link container */
+.profile-icon-link:hover {
+  background-color: rgba(0, 212, 255, 0.15); /* Cyan-tinted overlay */
+  transform: translateY(-2px);
+}
+
+/* Active state for links */
+.navbar-links a.active {
+  color: #00d4ff;
+  background-color: #333333; /* Darker gray for active */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  .navbar-links {
+    gap: 15px;
+  }
+  .navbar-links a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  .profile-navbar-icon {
+    width: 34px;
+    height: 34px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  .profile-icon-link {
+    margin-top: 10px;
+  }
+}

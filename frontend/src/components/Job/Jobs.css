@@ -1,34 +1,54 @@
+/* === Global & Layout Setup === */
 .jobs.page {
-  padding: 40px;
-  background-color: #f0f2f5;
+  padding: 50px;
+  background: linear-gradient(to right, #f6f8fa, #eaeef3);
   min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  animation: fadeInPage 0.8s ease-in-out;
 }
 
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* === Container === */
 .jobs .container {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px;
   background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.6s ease-in-out;
 }
 
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* === Heading === */
 .jobs h1 {
   text-align: center;
+  font-size: 3.2em;
+  font-weight: 800;
   margin-bottom: 40px;
-  color: #2c3e50;
-  font-size: 3em;
-  font-weight: 700;
+  background: linear-gradient(to right, #1a3c34, #26a69a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   letter-spacing: 1px;
 }
 
+/* === Grid for Cards === */
 .jobs .banner {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 30px;
+  gap: 35px;
   padding: 20px;
 }
 
+/* === Individual Card === */
 .jobs .card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -43,42 +63,11 @@
   text-align: center;
   cursor: pointer;
   overflow-wrap: break-word;
-  min-height: 380px;
+  min-height: 300px;
+  border: 1px solid black;
 }
 
-.jobs .card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-
-.jobs .card p {
-  margin: 8px 0;
-  color: #555;
-  font-size: 1.1em;
-}
-
-.jobs .card p:first-child {
-  font-weight: bold;
-  font-size: 0.9em;
-  color: #007bff;
-  margin-bottom: 0px;
-  line-height: 1.5em;
-  white-space: normal;
-  text-align: center;
-  padding-top: 0;
-  min-height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-}
-
-.jobs .card p:nth-child(2),
-.jobs .card p:nth-child(3) {
-  color: #7f8c8d;
-  font-size: 0.95em;
-}
-
+/* Job details link button */
 .jobs .card .job-details-link {
   display: inline-block;
   background-color: #28a745;
@@ -88,12 +77,20 @@
   text-decoration: none;
   font-weight: 600;
   margin-top: auto;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease-in-out; /* Modified transition */
   border: none;
   cursor: pointer;
 }
 
+/* Button hover effect */
 .jobs .card .job-details-link:hover {
   background-color: #218838;
-  transform: translateY(-2px);
-} 
+  transform: translateY(-3px) scale(1.05); /* Added scale and increased translateY */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Added box-shadow */
+}
+
+/* Button active effect */
+.jobs .card .job-details-link:active {
+  transform: translateY(0) scale(1); /* Reset on active */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow on active */
+}

@@ -1,0 +1,274 @@
+.myJobs {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.myJobs .container {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.myJobs h1 {
+  font-size: 2.8rem;
+  margin-bottom: 35px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #1a3c34, #26a69a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.myJobs .job_listings_page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.myJobs .job_card {
+  background: linear-gradient(145deg, #ffffff, #f9f9f9);
+  border: none;
+  border-radius: 15px;
+  padding: 35px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  overflow-x: auto;
+}
+
+/* Add a black thin line between job cards */
+.myJobs .job_card:not(:last-child) {
+  border-bottom: 1px solid #000000;
+  padding-bottom: 35px;
+  margin-bottom: 35px;
+}
+
+.myJobs .job_card .job_details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.myJobs .job_card .job_details .detail_item {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 25px;
+}
+
+.myJobs .job_card .job_details .detail_item .detail_label {
+  font-weight: 700;
+  color: #1a3c34;
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.myJobs .job_card .job_details .detail_item .detail_input,
+.myJobs .job_card .job_details .detail_item .detail_select {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #333;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.myJobs .job_card .job_details .detail_item .detail_input:focus,
+.myJobs .job_card .job_details .detail_item .detail_select:focus {
+  border-color: #26a69a;
+  box-shadow: 0 0 8px rgba(38, 166, 154, 0.3);
+  outline: none;
+  background-color: #fff;
+}
+
+.myJobs .job_card .job_details .detail_item .detail_input:disabled,
+.myJobs .job_card .job_details .detail_item .detail_select:disabled {
+  background-color: #eceff1;
+  color: #90a4ae;
+  cursor: not-allowed;
+}
+
+.myJobs .job_card .salary_range_inputs {
+  display: flex;
+  gap: 20px;
+}
+
+.myJobs .job_card .salary_range_inputs .detail_input {
+  flex: 1;
+}
+
+.myJobs .job_card .full_width_details {
+  width: 100%;
+}
+
+.myJobs .job_card .full_width_details .detail_item .detail_textarea {
+  width: 100%;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #333;
+  background-color: #f9f9f9;
+  min-height: 100px;
+  resize: vertical;
+  margin-top: 15px;
+  box-sizing: border-box;
+}
+
+.myJobs .job_card .full_width_details .detail_item .detail_textarea:focus {
+  border-color: #26a69a;
+  box-shadow: 0 0 8px rgba(38, 166, 154, 0.3);
+  outline: none;
+  background-color: #fff;
+}
+
+.myJobs .job_card .full_width_details .detail_item .detail_textarea:disabled {
+  background-color: #eceff1;
+  color: #90a4ae;
+  cursor: not-allowed;
+}
+
+.myJobs .job_card .actions {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: nowrap;
+  gap: 15px;
+  margin-top: 35px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.myJobs .job_card .actions button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.myJobs .job_card .actions button svg {
+  font-size: 1.3rem;
+}
+
+/* Ensure Edit button is on the left */
+.myJobs .job_card .actions .edit_btn {
+  background: #0056b3; /* Blue color as shown in the image */
+  color: white;
+  order: 1; /* Ensure Edit button comes first */
+}
+
+/* Ensure Delete button is on the right */
+.myJobs .job_card .actions .delete_btn {
+  background: #d81b60; /* Red color as shown in the image */
+  color: white;
+  order: 2; /* Ensure Delete button comes after Edit */
+}
+
+.myJobs .job_card .actions .save_btn {
+  background: #0056b3; /* Matching the Edit button color */
+  color: white;
+  order: 1; /* If Save button exists, it should be on the left */
+}
+
+.myJobs .job_card .actions .cancel_btn {
+  background: #546e7a;
+  color: white;
+  order: 2; /* If Cancel button exists, it should be on the right */
+}
+
+.myJobs .no_jobs_message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #607d8b;
+  margin-top: 100px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .myJobs {
+    padding: 30px 10px;
+  }
+
+  .myJobs .container {
+    padding: 25px;
+  }
+
+  .myJobs h1 {
+    font-size: 2.2rem;
+  }
+
+  .myJobs .job_listings_page {
+    grid-template-columns: 1fr;
+  }
+
+  .myJobs .job_card {
+    padding: 25px;
+  }
+
+  .myJobs .job_card:not(:last-child) {
+    border-bottom: 1px solid #000000;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+  }
+
+  .myJobs .job_card .job_details {
+    flex-direction: column;
+  }
+
+  .myJobs .job_card .job_details .detail_item {
+    min-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .myJobs .job_card .actions {
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    gap: 15px;
+    justify-content: flex-end;
+  }
+
+  .myJobs .job_card .actions button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    min-width: 90px;
+  }
+
+  .myJobs .job_card .job_details .detail_item .detail_label {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .myJobs .job_card .job_details .detail_item .detail_input,
+  .myJobs .job_card .job_details .detail_item .detail_select,
+  .myJobs .job_card .full_width_details .detail_item .detail_textarea {
+    padding: 15px;
+    font-size: 1rem;
+    min-height: 80px;
+  }
+}

@@ -1,0 +1,178 @@
+.job_post {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); /* Gradient background for a modern look */
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.job_post .container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+}
+
+.job_post h3 {
+  font-size: 2.8rem;
+  color: #1a3c34;
+  margin-bottom: 35px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #1a3c34, #26a69a); /* Gradient text for the heading */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.job_post form .wrapper {
+  display: flex;
+  gap: 25px; /* Slightly larger gap for better spacing */
+  margin-bottom: 25px;
+}
+
+.job_post form .wrapper input,
+.job_post form .wrapper select,
+.job_post form input,
+.job_post form textarea,
+.job_post form select {
+  flex: 1;
+  padding: 15px 20px;
+  border: 2px solid #e0e0e0; /* Thicker border for better visibility */
+  border-radius: 10px;
+  font-size: 1.1rem;
+  color: #333;
+  background-color: #f9f9f9; /* Light background for inputs */
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.job_post form input:focus,
+.job_post form select:focus,
+.job_post form textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.3); /* Softer glow on focus */
+  outline: none;
+  background-color: #fff;
+}
+
+.job_post form textarea {
+  resize: vertical;
+  min-height: 150px;
+  margin-bottom: 25px;
+}
+
+.job_post .skills_wrapper {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #f9f9f9; /* Light background for skills section */
+  border-radius: 10px;
+}
+
+.job_post .skills_wrapper .error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.job_post .salary_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #f9f9f9; /* Light background for salary section */
+  border-radius: 10px;
+}
+
+.job_post .salary_wrapper > div {
+  flex: 1;
+}
+
+.job_post .salary_wrapper p {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin: 5px 0;
+  font-weight: 500;
+}
+
+.job_post .salary_wrapper .ranged_salary {
+  display: flex;
+  gap: 25px;
+}
+
+.job_post button[type="submit"] {
+  background: linear-gradient(to right, #4CAF50, #66BB6A); /* Gradient button background */
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 50px; /* Rounded button for a modern look */
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3); /* Subtle shadow for the button */
+}
+
+.job_post button[type="submit"]:hover {
+  background: linear-gradient(to right, #45a049, #5daf53);
+  transform: translateY(-3px); /* Slight lift on hover */
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+}
+
+.job_post button[type="submit"]:active {
+  transform: translateY(0); /* Pressed effect */
+  box-shadow: 0 3px 10px rgba(76, 175, 80, 0.2);
+}
+
+@media (max-width: 768px) {
+  .job_post {
+    padding: 30px 10px;
+  }
+
+  .job_post .container {
+    padding: 25px;
+  }
+
+  .job_post h3 {
+    font-size: 2.2rem;
+  }
+
+  .job_post form .wrapper {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .job_post .salary_wrapper .ranged_salary {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .job_post form .wrapper input,
+  .job_post form .wrapper select,
+  .job_post form input,
+  .job_post form textarea,
+  .job_post form select {
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
+
+  .job_post button[type="submit"] {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+  }
+
+  .job_post .skills_wrapper,
+  .job_post .salary_wrapper {
+    padding: 15px;
+  }
+}

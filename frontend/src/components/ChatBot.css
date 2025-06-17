@@ -1,0 +1,111 @@
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent; /* Remove solid color for image to show fully */
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.1);
+}
+
+.chat-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.chat-box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background: #1a1a1a; /* Dark background */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  color: #f0f0f0; /* Light text for messages */
+}
+
+.input-container {
+  display: flex;
+  border-top: 1px solid #333;
+}
+
+.user-input {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #333; /* Dark input background */
+  color: #f0f0f0; /* Light text for input */
+}
+
+.send-btn {
+  width: 20%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.send-btn:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.message.user {
+  background-color: #4a4a4a; /* Darker background for user messages */
+  margin-left: auto;
+  color: #ffffff; /* White text for user messages */
+  display: flex;
+  align-items: center;
+}
+
+.message.bot {
+  background-color: #333; /* Slightly lighter dark for bot messages */
+  margin-right: auto;
+  color: #f0f0f0; /* Light text for bot messages */
+}
+
+.user-icon {
+  width: 24px; /* Adjust size as needed */
+  height: 24px; /* Adjust size as needed */
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover;
+  margin-right: 8px; /* Space between icon and text */
+}

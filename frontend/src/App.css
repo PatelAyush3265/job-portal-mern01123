@@ -78,14 +78,18 @@ p {
   max-width: 1500px;
   margin: 0 auto;
   min-height: 100vh;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
 }
 .authPage .container {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #fff;
+  background: #ffffff;
   padding: 20px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .authPage .container .header {
   display: flex;
@@ -94,6 +98,7 @@ p {
 }
 .authPage .container .header h3 {
   font-size: 1.6rem;
+  color: #333333;
 }
 .authPage .container .header img {
   width: 80px;
@@ -101,7 +106,7 @@ p {
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto;
-  background: #fff;
+  background: #ffffff;
   padding: 5px;
 }
 .authPage .container .header {
@@ -122,26 +127,32 @@ p {
   display: flex;
   align-items: center;
   border-radius: 7px;
+  border: 1px solid #cccccc;
 }
 .authPage .container form .inputTag div input,
 .authPage .container form .inputTag div select {
-  background: #87878778;
+  background: #fdfdfd;
   padding: 8px;
   border: none;
   width: 100%;
   height: 100%;
+  color: #333333;
+}
+.authPage .container form .inputTag div input::placeholder {
+  color: #888888;
 }
 .authPage .container form .inputTag div input:focus,
 .authPage .container form .inputTag div select:focus {
   outline: none;
+  border: 1px solid #666666;
 }
 .authPage .container form .inputTag div svg {
   width: 10%;
   font-size: 1.5rem;
-  background: #2d5649;
+  background: #333333;
   height: 100%;
   padding: 8px;
-  color: #fff;
+  color: #ffffff;
 }
 .authPage .container form button {
   padding: 12px;
@@ -149,21 +160,31 @@ p {
   border: none;
   margin-top: 25px;
   font-weight: 700;
-  color: #fff;
-  background: #2d5649;
+  color: #ffffff;
+  background: #000000;
   font-size: 1.2rem;
   border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.authPage .container form button:hover {
+  background-color: #333333;
 }
 .authPage .container form a {
   padding: 12px;
   text-align: center;
-  border: 1px solid #2d5649;
+  border: 1px solid #000000;
   margin-top: 25px;
   font-weight: 700;
-  color: #2d5649;
+  color: #000000;
   font-size: 1.2rem;
   text-decoration: none;
   border-radius: 7px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.authPage .container form a:hover {
+  background-color: #000000;
+  color: #ffffff;
 }
 .authPage .banner {
   flex: 2;
@@ -171,6 +192,7 @@ p {
   justify-content: center;
   align-items: center;
   overflow-y: hidden;
+  background-color: #e0e0e0;
 }
 .authPage .banner img {
   width: 100%;
@@ -239,6 +261,11 @@ p {
 }
 .navbarHide {
   display: none;
+}
+
+.heroSection, .howitworks, .categories, .companies, .jobs, .jobDetail, .application, .my_applications, .job_post, .myJobs {
+  position: relative;
+  z-index: 1;
 }
 
 .heroSection {
@@ -983,7 +1010,6 @@ p {
 .myJobs .container {
   min-width: 1500px;
   max-width: 1500px;
-  /* margin-top: 50px; */
   margin: 0 auto;
   align-items: center;
   display: flex;
@@ -998,6 +1024,7 @@ p {
   flex-direction: column;
 }
 .myJobs .container .banner .card {
+  background: #fff;
   width: 100%;
   display: flex;
   gap: 20px;

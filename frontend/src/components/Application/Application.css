@@ -1,3 +1,112 @@
-.resume-thumbnail {
+/* Application section */
+.application {
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+  
+  /* Container */
+  .application .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form heading */
+  .application h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2.5em;
+    font-weight: 700;
+  }
+  
+  /* Form styles */
+  .application form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Input fields (excluding email for now) */
+  .application form input[type="text"],
+  .application form input[type="email"],
+  .application form input[type="number"],
+  .application form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    transition: border-color 0.3s ease;
+  }
+  
+  .application form input[type="text"]:focus,
+  .application form input[type="number"]:focus,
+  .application form input[type="email"]:focus,
+  .application form textarea:focus {
+    border-color: #00d4ff;
+    outline: none;
+  }
+  
+  /* Textarea */
+  .application form textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  /* File input */
+  .application form input[type="file"] {
+    padding: 10px 0;
+    font-size: 1em;
+  }
+  
+  /* Submit button */
+  .application form button {
+    background: linear-gradient(to right, #00d4ff, #00aaff);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Inter', sans-serif;
     cursor: pointer;
-} 
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 212, 255, 0.3);
+    margin-top: 10px;
+  }
+  
+  /* Submit button hover */
+  .application form button:hover:not(:disabled) {
+    background: linear-gradient(to right, #00aaff, #0088ff);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 212, 255, 0.5);
+  }
+  
+  /* Submit button disabled state */
+  .application form button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .application {
+      padding: 30px 15px;
+    }
+    .application .container {
+      padding: 20px;
+    }
+    .application h3 {
+      font-size: 2em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .application h3 {
+      font-size: 1.8em;
+    }
+  }

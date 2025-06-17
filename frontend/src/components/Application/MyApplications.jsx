@@ -201,10 +201,10 @@ const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
       <div className="job_seeker_card">
         <div className="detail">
           <p>
-            <span>Job Title:</span> {element.jobID.title}
+            <span>Job Title:</span> {element.jobID ? element.jobID.title : "N/A"}
           </p>
           <p>
-            <span>Company:</span> {element.employerID.user.name}
+            <span>Company:</span> {element.employerID && element.employerID.user ? element.employerID.user.name : "N/A"}
           </p>
           <p>
             <span>ATS Score:</span> {element.atsScore}%

@@ -17,6 +17,7 @@ import PostJob from "./components/Job/PostJob";
 import NotFound from "./components/NotFound/NotFound";
 import MyJobs from "./components/Job/MyJobs";
 import Profile from "./components/Layout/Profile";
+import ChatBot from "./components/ChatBot";
 
 const App = () => {
   const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
@@ -56,6 +57,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
+        <ChatBot />
         <Toaster />
       </BrowserRouter>
     </>

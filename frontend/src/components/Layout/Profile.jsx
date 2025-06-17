@@ -81,9 +81,9 @@ const Profile = () => {
               <div className="job-list">
                 {appliedJobs.map((application) => (
                   <div key={application._id} className="job-item">
-                    <h3>{application.jobID.title}</h3>
+                    <h3>{application.jobID ? application.jobID.title : "N/A"}</h3>
                     <p>
-                      <span>Company:</span> {application.employerID.user.name}
+                      <span>Company:</span> {application.employerID && application.employerID.user ? application.employerID.user.name : "N/A"}
                     </p>
                     <p>
                       <span>Applied On:</span>{" "}
