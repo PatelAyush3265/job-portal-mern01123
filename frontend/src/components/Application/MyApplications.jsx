@@ -125,16 +125,18 @@ const MyApplications = () => {
               </center>
             </>
           ) : (
-            applications.map((element) => {
-              return (
-                <JobSeekerCard
-                  element={element}
-                  key={element._id}
-                  deleteApplication={deleteApplication}
-                  openModal={openModal}
-                />
-              );
-            })
+            applications
+              .filter((element) => element.jobID)
+              .map((element) => {
+                return (
+                  <JobSeekerCard
+                    element={element}
+                    key={element._id}
+                    deleteApplication={deleteApplication}
+                    openModal={openModal}
+                  />
+                );
+              })
           )}
         </div>
       ) : (
