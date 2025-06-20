@@ -18,6 +18,10 @@ const PostJob = () => {
   const [salaryType, setSalaryType] = useState("default");
   const [skills, setSkills] = useState("");
   const [skillError, setSkillError] = useState("");
+  const [jobType, setJobType] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [durationStart, setDurationStart] = useState("");
+  const [durationEnd, setDurationEnd] = useState("");
 
   const { isAuthorized, user } = useContext(Context);
 
@@ -36,6 +40,16 @@ const PostJob = () => {
     }
     setSkillError("");
 
+    // New validation for required fields
+    if (!companyName.trim()) {
+      toast.error("Please provide a company name.");
+      return;
+    }
+    if (!jobType) {
+      toast.error("Please select job type.");
+      return;
+    }
+
     if (salaryType === "Fixed Salary") {
       setSalaryFrom("");
       setSalaryTo("");
@@ -47,7 +61,18 @@ const PostJob = () => {
       setFixedSalary("");
     }
 
+    // Add validation for duration
+    if (!durationStart) {
+      toast.error("Please provide job start time.");
+      return;
+    }
+    if (!durationEnd) {
+      toast.error("Please provide job end time.");
+      return;
+    }
+
     const jobData = {
+      companyName,
       title,
       description,
       category,
@@ -55,8 +80,11 @@ const PostJob = () => {
       city,
       location,
       skills: skillsArray,
-      ...(fixedSalary.length >= 4 ? { fixedSalary } : { salaryFrom, salaryTo })
+      ...(fixedSalary.length >= 4 ? { fixedSalary } : { salaryFrom, salaryTo }),
+      jobType,
+      duration: { start: durationStart, end: durationEnd },
     };
+    console.log("Posting job data:", jobData);
 
     try {
       const res = await axios.post(
@@ -82,6 +110,10 @@ const PostJob = () => {
       setFixedSalary("");
       setSkills("");
       setSalaryType("default");
+      setJobType("");
+      setCompanyName("");
+      setDurationStart("");
+      setDurationEnd("");
     } catch (err) {
       toast.error(err.response.data.message);
     }
@@ -98,6 +130,15 @@ const PostJob = () => {
         <div className="container">
           <h3>POST NEW JOB</h3>
           <form onSubmit={handleJobPost}>
+            <div className="wrapper">
+              <input
+                type="text"
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
+                placeholder="Company Name"
+                required
+              />
+            </div>
             <div className="wrapper">
               <input
                 type="text"
@@ -199,6 +240,34 @@ const PostJob = () => {
                   </div>
                 )}
               </div>
+            </div>
+            <div className="wrapper">
+              <select
+                value={jobType}
+                onChange={(e) => setJobType(e.target.value)}
+                className="job-type-select"
+                required
+              >
+                <option value="">Select Job Type</option>
+                <option value="Full Time">Full Time</option>
+                <option value="Part Time">Part Time</option>
+              </select>
+            </div>
+            <div className="wrapper">
+              <label>Job Start Time:</label>
+              <input
+                type="time"
+                value={durationStart}
+                onChange={e => setDurationStart(e.target.value)}
+                required
+              />
+              <label>Job End Time:</label>
+              <input
+                type="time"
+                value={durationEnd}
+                onChange={e => setDurationEnd(e.target.value)}
+                required
+              />
             </div>
             <textarea
               rows="10"

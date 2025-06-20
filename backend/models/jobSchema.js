@@ -7,6 +7,10 @@ const jobSchema = new mongoose.Schema({
     minLength: [3, "Title must contain at least 3 Characters!"],
     maxLength: [30, "Title cannot exceed 30 Characters!"],
   },
+  companyName: {
+    type: String,
+    required: [true, "Please provide a company name."],
+  },
   description: {
     type: String,
     required: [true, "Please provide decription."],
@@ -59,6 +63,15 @@ const jobSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  jobType: {
+    type: String,
+    enum: ["Full Time", "Part Time"],
+    required: [true, "Please select job type (Full Time or Part Time)."],
+  },
+  duration: {
+    start: { type: String },
+    end: { type: String },
+  },
   jobPostedOn: {
     type: Date,
     default: Date.now,
@@ -68,6 +81,12 @@ const jobSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
+  shortlisted: [
+    {
+      jobSeeker: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+      applicationId: { type: mongoose.Schema.Types.ObjectId, ref: "Application" }
+    }
+  ],
 });
 
 export const Job = mongoose.model("Job", jobSchema);

@@ -272,6 +272,69 @@ const MyJobs = () => {
                           <option value={false}>NO</option>
                         </select>
                       </div>
+                      <div className="detail_item">
+                        <span className="detail_label">Company Name:</span>
+                        <input
+                          type="text"
+                          disabled={editingMode !== element._id}
+                          value={element.companyName || ""}
+                          onChange={e => handleInputChange(element._id, "companyName", e.target.value)}
+                          className="detail_input"
+                        />
+                      </div>
+                      <div className="detail_item">
+                        <span className="detail_label">Job Type:</span>
+                        <select
+                          value={element.jobType || ""}
+                          onChange={e => handleInputChange(element._id, "jobType", e.target.value)}
+                          disabled={editingMode !== element._id}
+                          className="detail_select"
+                        >
+                          <option value="">Select Job Type</option>
+                          <option value="Full Time">Full Time</option>
+                          <option value="Part Time">Part Time</option>
+                        </select>
+                      </div>
+                      <div className="detail_item">
+                        <span className="detail_label">Location:</span>
+                        <input
+                          type="text"
+                          disabled={editingMode !== element._id}
+                          value={element.location || ""}
+                          onChange={e => handleInputChange(element._id, "location", e.target.value)}
+                          className="detail_input"
+                        />
+                      </div>
+                      <div className="detail_item">
+                        <span className="detail_label">Description:</span>
+                        <textarea
+                          disabled={editingMode !== element._id}
+                          value={element.description || ""}
+                          onChange={e => handleInputChange(element._id, "description", e.target.value)}
+                          className="detail_input"
+                          rows={3}
+                        />
+                      </div>
+                      <div className="detail_item">
+                        <span className="detail_label">Job Start Time:</span>
+                        <input
+                          type="time"
+                          disabled={editingMode !== element._id}
+                          value={element.duration?.start || ""}
+                          onChange={e => handleInputChange(element._id, "duration", { ...element.duration, start: e.target.value })}
+                          className="detail_input"
+                        />
+                      </div>
+                      <div className="detail_item">
+                        <span className="detail_label">Job End Time:</span>
+                        <input
+                          type="time"
+                          disabled={editingMode !== element._id}
+                          value={element.duration?.end || ""}
+                          onChange={e => handleInputChange(element._id, "duration", { ...element.duration, end: e.target.value })}
+                          className="detail_input"
+                        />
+                      </div>
                     </div>
 
                     <div className="full_width_details">

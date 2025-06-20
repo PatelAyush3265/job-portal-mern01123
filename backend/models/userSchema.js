@@ -35,6 +35,46 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  resume: {
+    public_id: {
+      type: String, // cloudinary id
+      required: true,
+    },
+    url: {
+      type: String, // cloudinary url
+      required: true,
+    },
+  },
+  profilePicture: {
+    url: {
+      type: String,
+    },
+  },
+  companyName: {
+    type: String,
+  },
+  companyDescription: {
+    type: String,
+  },
+  education: {
+    type: String,
+  },
+  skills: [
+    {
+      type: String,
+    },
+  ],
+  languages: [
+    {
+      type: String,
+    },
+  ],
+  projects: [
+    {
+      name: { type: String },
+      link: { type: String },
+    },
+  ],
   createdAt: {
     type: Date,
     default: Date.now,

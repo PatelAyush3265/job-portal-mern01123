@@ -33,29 +33,38 @@ const JobDetails = () => {
         <h3>Job Details</h3>
         <div className="banner">
           <p>
-            Title: <span> {job.title}</span>
+            <b>Title:</b> <span>{job.title || ""}</span>
           </p>
           <p>
-            Category: <span>{job.category}</span>
+            <b>Company Name:</b> <span>{job.companyName || ""}</span>
           </p>
           <p>
-            Country: <span>{job.country}</span>
+            <b>Category:</b> <span>{job.category || ""}</span>
           </p>
           <p>
-            City: <span>{job.city}</span>
+            <b>Job Type:</b> <span>{job.jobType || ""}</span>
           </p>
           <p>
-            Location: <span>{job.location}</span>
+            <b>Job Timing:</b> <span>{job.jobTiming ? `${job.jobTiming.start || ""} - ${job.jobTiming.end || ""}` : ""}</span>
           </p>
           <p>
-            Description: <span>{job.description}</span>
+            <b>Country:</b> <span>{job.country || ""}</span>
           </p>
           <p>
-            Job Posted On: <span>{job.jobPostedOn}</span>
+            <b>City:</b> <span>{job.city || ""}</span>
           </p>
           <p>
-            Salary:{" "}
-            {job.fixedSalary ? (
+            <b>Location:</b> <span>{job.location || ""}</span>
+          </p>
+          <p>
+            <b>Skills Required:</b> <span>{job.skills && job.skills.length > 0 ? job.skills.join(", ") : ""}</span>
+          </p>
+          <p>
+            <b>Description:</b> <span>{job.description || ""}</span>
+          </p>
+        
+          <p>
+            <b>Salary:</b> {job.fixedSalary ? (
               <span>{job.fixedSalary}</span>
             ) : (
               <span>

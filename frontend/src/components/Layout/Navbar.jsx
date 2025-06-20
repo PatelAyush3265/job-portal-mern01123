@@ -69,7 +69,11 @@ const Navbar = () => {
           <li className="profile-icon-link">
             <Link to={"/profile"} onClick={() => setShow(false)}>
               <img
-                src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740"
+                src={
+                  user && user.profilePicture?.url
+                    ? user.profilePicture.url
+                    : "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740"
+                }
                 alt="Profile"
                 className="profile-navbar-icon"
               />

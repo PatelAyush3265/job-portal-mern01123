@@ -57,22 +57,19 @@
 
 /* Profile icon styling */
 .profile-navbar-icon {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
   cursor: pointer;
-  transition: transform 0.3s ease-in-out, border-color 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 20px;
-  margin-right: 20px;
-  border: 2px solid #555555; /* Darker gray border */
+  border: 2px solid #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover effect for profile icon */
 .profile-navbar-icon:hover {
-  transform: scale(1.15) rotate(5deg); /* Slight rotation for flair */
-  border-color: #00d4ff; /* Vibrant cyan border */
-  box-shadow: 0 0 12px rgba(0, 212, 255, 0.6); /* Enhanced glow */
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
 /* Profile icon link container */

@@ -28,9 +28,11 @@ export const postJob = catchAsyncErrors(async (req, res, next) => {
     salaryFrom,
     salaryTo,
     skills,
+    companyName,
+    jobType,
   } = req.body;
 
-  if (!title || !description || !category || !country || !city || !location || !skills) {
+  if (!title || !description || !category || !country || !city || !location || !skills || !companyName || !jobType) {
     return next(new ErrorHandler("Please provide full job details.", 400));
   }
 
@@ -78,6 +80,8 @@ export const postJob = catchAsyncErrors(async (req, res, next) => {
     salaryFrom,
     salaryTo,
     skills: cleanedSkills, // Use the cleaned array
+    companyName,
+    jobType,
     postedBy,
   });
   res.status(200).json({
@@ -157,4 +161,50 @@ export const getSingleJob = catchAsyncErrors(async (req, res, next) => {
   } catch (error) {
     return next(new ErrorHandler(`Invalid ID / CastError`, 404));
   }
+});
+
+export const shortlistApplicant = catchAsyncErrors(async (req, res, next) => {
+  const { jobId } = req.params;
+  const { jobSeekerId, applicationId } = req.body;
+  const job = await Job.findById(jobId);
+  if (!job) {
+    return next(new ErrorHandler("Job not found.", 404));
+  }
+  // Check if already shortlisted
+  const alreadyShortlisted = job.shortlisted.some(
+    (entry) =>
+      entry.jobSeeker.toString() === jobSeekerId &&
+      entry.applicationId.toString() === applicationId
+  );
+  if (alreadyShortlisted) {
+    return res.status(200).json({ success: true, message: "Already shortlisted." });
+  }
+  job.shortlisted.push({ jobSeeker: jobSeekerId, applicationId });
+  await job.save();
+  res.status(200).json({ success: true, message: "Shortlisted successfully." });
+});
+
+export const getShortlistedApplicants = catchAsyncErrors(async (req, res, next) => {
+  const { jobId } = req.params;
+  const job = await Job.findById(jobId).populate('shortlisted.jobSeeker');
+  if (!job) {
+    return next(new ErrorHandler("Job not found.", 404));
+  }
+  res.status(200).json({
+    success: true,
+    shortlisted: job.shortlisted,
+  });
+});
+
+export const removeShortlistedApplicant = catchAsyncErrors(async (req, res, next) => {
+  const { jobId, applicationId } = req.params;
+  const job = await Job.findById(jobId);
+  if (!job) {
+    return next(new ErrorHandler("Job not found.", 404));
+  }
+  job.shortlisted = job.shortlisted.filter(
+    (entry) => entry.applicationId.toString() !== applicationId
+  );
+  await job.save();
+  res.status(200).json({ success: true, message: "Removed from shortlist." });
 });
